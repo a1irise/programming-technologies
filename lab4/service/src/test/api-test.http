@@ -1,0 +1,71 @@
+GET http://localhost:8080/api/kotiki/54
+Authorization: Basic admin admin
+Accept: application/json
+
+###
+
+POST http://localhost:8080/api/kotiki
+Content-Type: application/json
+
+{
+  "name": "Barsik",
+  "dateOfBirth": 1234567,
+  "breed": "Dvornyaga",
+  "color": "BLACK",
+  "ownerId": 12
+}
+
+###
+
+POST http://localhost:8080/api/owners
+Content-Type: application/json
+
+{
+  "name": "Jake",
+  "dateOfBirth": 123
+}
+
+###
+
+GET http://localhost:8080/api/kotiki
+Authorization: Basic mike mike123
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/kotiki/52/friends
+Authorization: Basic admin admin
+Accept: application/json
+
+###
+
+POST http://localhost:8080/api/friends
+Content-Type: application/json
+
+{
+  "kotik1Id": 5,
+  "kotik2Id": 7
+}
+
+###
+
+DELETE http://localhost:8080/api/friends
+Content-Type: application/json
+
+{
+  "kotik1Id": 5,
+  "kotik2Id": 7
+}
+
+###
+
+POST http://localhost:8080/api/users
+Authorization: Basic admin admin
+Content-Type: application/json
+
+{
+  "username": "mike",
+  "password": "mike123",
+  "isAdmin": false,
+  "ownerId": 4
+}

@@ -1,0 +1,87 @@
+// kotik controller
+
+GET http://localhost:8080/api/kotiki/64
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/kotiki/all
+Accept: application/json
+
+###
+
+POST http://localhost:8080/api/kotiki
+Content-Type: application/json
+
+{
+  "name": "coco",
+  "dateOfBirth": 1234567,
+  "breed": "Dvornyaga",
+  "color": "BLACK",
+  "ownerId": 5
+}
+
+###
+
+DELETE http://localhost:8080/api/kotiki/62
+
+###
+
+GET http://localhost:8080/api/kotiki/7/owner
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/kotiki/6/friends
+Accept: application/json
+
+###
+
+POST http://localhost:8080/api/kotiki/6/friends
+Content-Type: application/json
+
+{
+  "kotikId": 54
+}
+
+###
+
+DELETE http://localhost:8080/api/kotiki/6/friends/54
+
+###
+
+// owner controller
+
+GET http://localhost:8080/api/friends/5
+Accept: application/json
+
+###
+
+POST http://localhost:8080/api/friends
+Content-Type: application/json
+
+{
+  "kotik1Id": 5,
+  "kotik2Id": 7
+}
+
+###
+
+DELETE http://localhost:8080/api/friends
+Content-Type: application/json
+
+{
+  "kotik1Id": 5,
+  "kotik2Id": 7
+}
+
+
+###
+
+POST http://localhost:8080/api/owners
+Content-Type: application/json
+
+{
+  "name": "Jake",
+  "dateOfBirth": 123
+}
